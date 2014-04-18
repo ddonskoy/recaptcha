@@ -33,6 +33,7 @@ module Recaptcha
       else
         html << %{<script type="text/javascript" src="#{uri}/challenge?k=#{key}}
         # html << %{#{error ? "&amp;error=#{CGI::escape(error)}" : ""}}
+        html << %{#{error ? "&amp;error=" : ""}}
         html << %{#{lang ? "&amp;lang=#{lang}" : ""}"></script>\n}
         unless options[:noscript] == false
           html << %{<noscript>\n  }
